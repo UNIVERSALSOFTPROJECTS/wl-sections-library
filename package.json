@@ -20,7 +20,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/MauUniversal/wl-sections-library.git"
+    "url": "git+https://github.com/UNIVERSALSOFTPROJECTS/wl-sections-library.git"
   },
   "scripts": {
     "dev": "vite",

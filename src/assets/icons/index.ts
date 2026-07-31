@@ -1,6 +1,6 @@
 import { IoMenu, IoSearchOutline, IoFlagOutline, IoChevronDown, IoChevronBack, IoChevronForward, IoClose, IoDocumentTextOutline, IoChatbubbleOutline } from "react-icons/io5";
 import { TbWallet, TbTrendingUp, TbHeadphones } from "react-icons/tb";
-import { HiMiniArrowDownTray } from "react-icons/hi2";
+import { HiMiniArrowDownTray, HiOutlineStar } from "react-icons/hi2";
 import { FiBell, FiUser, FiFacebook, FiYoutube, FiBookOpen, FiEye, FiEyeOff, FiInstagram, FiPercent } from "react-icons/fi";
 import { LuDices, LuTrophy, LuTv, LuTicket, LuSparkles, LuFlame, LuUsers, LuHistory } from "react-icons/lu";
 import { PiCirclesFourFill, PiBroadcastBold, PiChat } from "react-icons/pi";
@@ -15,12 +15,15 @@ export { HorseRiderIcon } from "./customIcons/HorseRiderIcon";
 export { GreyhoundIcon } from "./customIcons/GreyhoundIcon";
 export { ChariotIcon } from "./customIcons/ChariotIcon";
 export { StarIcon } from "./customIcons/StarIcon";
+export { BoltIcon } from "./customIcons/BoltIcon";
+export { GamepadIcon } from "./customIcons/GamepadIcon";
 
 //React Icons
 export const MenuIcon = IoMenu;
 export const CloseIcon = IoClose;
 export const WalletIcon = TbWallet;
 export const DownloadIcon = HiMiniArrowDownTray;
+export const OutlineStarIcon = HiOutlineStar;
 export const BellIcon = FiBell;
 export const UserIcon = FiUser;
 export const SearchIcon = IoSearchOutline;

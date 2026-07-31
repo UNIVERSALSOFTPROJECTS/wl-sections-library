@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from "react";
 import {
     ArrowForwardIcon,
     BellIcon,
+    BoltIcon,
     BookOpenIcon,
     BroadcastIcon,
     ChariotIcon,
@@ -19,6 +20,7 @@ import {
     EyeOffIcon,
     FacebookIcon,
     FlagIcon,
+    GamepadIcon,
     GiftIcon,
     GreyhoundIcon,
     HeadphonesIcon,
@@ -26,6 +28,7 @@ import {
     LoadingSpinnerIcon,
     MailIcon,
     MenuIcon,
+    OutlineStarIcon,
     PercentIcon,
     PlayIcon,
     SearchIcon,
@@ -90,6 +93,7 @@ const reactIconsCatalog: { name: string; Icon: IconComponent }[] = [
     { name: "ChevronBackIcon", Icon: ChevronBackIcon },
     { name: "ChevronForwardIcon", Icon: ChevronForwardIcon },
     { name: "SparklesIcon", Icon: SparklesIcon },
+    { name: "OutlineStarIcon", Icon: OutlineStarIcon },
     { name: "UsersIcon", Icon: UsersIcon },
     { name: "DocumentTextIcon", Icon: DocumentTextIcon },
     { name: "PercentIcon", Icon: PercentIcon },
@@ -103,6 +107,8 @@ const reactIconsCatalog: { name: string; Icon: IconComponent }[] = [
 
 const customIconsCatalog: { name: string; Icon: IconComponent }[] = [
     { name: "StarIcon", Icon: StarIcon },
+    { name: "BoltIcon", Icon: BoltIcon },
+    { name: "GamepadIcon", Icon: GamepadIcon },
     { name: "HorseRiderIcon", Icon: HorseRiderIcon },
     { name: "GreyhoundIcon", Icon: GreyhoundIcon },
     { name: "ChariotIcon", Icon: ChariotIcon },

@@ -10,11 +10,13 @@ import {
   Recommendations,
   SportsEvents,
 } from "./home";
+import { ShortcutsNav } from "./shortcutsNav";
 import type { SectionDefinition, SectionType } from "./types";
 
 export const sectionRegistry: Record<SectionType, ComponentType> = {
   GlobalNav,
   Footer,
+  ShortcutsNav,
   HeroBanner,
   FeaturedPromotions,
   Recommendations,
@@ -38,6 +40,13 @@ export const sectionCatalog: SectionDefinition[] = [
     scope: "global",
     description:
       "Footer de layout: marca, redes, nav, pagos, badges y legal. Slot fijo del chrome.",
+  },
+  {
+    type: "ShortcutsNav",
+    label: "Bottom nav (ShortcutsNav)",
+    scope: "global",
+    description:
+      "Barra inferior fija: atajos (Casino, Deportes, Home, Hípicas, Más). Chrome de layout; items inyectables para JSON/BO.",
   },
   {
     type: "HeroBanner",

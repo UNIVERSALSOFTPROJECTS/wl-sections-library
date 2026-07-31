@@ -4,7 +4,7 @@ Librería de secciones y UI compartida para plataformas white-label (casino).
 
 ## Qué exporta
 
-- Secciones: `GlobalNav`, `Footer`, `HeroBanner`, `FeaturedPromotions`, `Recommendations`, `SportsEvents`, `CasinoGames`, `LatestWinners`, …
+- Secciones: `GlobalNav`, `Footer`, `ShortcutsNav`, `HeroBanner`, `FeaturedPromotions`, `Recommendations`, `SportsEvents`, `CasinoGames`, `LatestWinners`, …
 - `sectionRegistry` / `sectionCatalog` / `SectionType`
 - Primitivos UI: `Button`, `Carousel`, `IconButton`, …
 - `theme` / `createTheme`
@@ -26,13 +26,13 @@ Repo org: `UNIVERSALSOFTPROJECTS/wl-sections-library` (privado).
 Local (SSH con host `github-universalsoft`):
 
 ```bash
-npm install git+ssh://git@github-universalsoft/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.2
+npm install git+ssh://git@github-universalsoft/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.3
 ```
 
 En `package.json` (HTTPS; Cloudflare Pages necesita `GITHUB_TOKEN` con acceso al repo):
 
 ```json
-"@wl/sections-library": "git+https://github.com/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.2"
+"@wl/sections-library": "git+https://github.com/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.3"
 ```
 
 Al instalar desde git, el script `prepare` corre `build:lib` y genera `dist/`.

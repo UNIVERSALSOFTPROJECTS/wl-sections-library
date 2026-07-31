@@ -1,6 +1,7 @@
 export type SectionType =
   | "GlobalNav"
   | "Footer"
+  | "ShortcutsNav"
   | "HeroBanner"
   | "FeaturedPromotions"
   | "Recommendations"

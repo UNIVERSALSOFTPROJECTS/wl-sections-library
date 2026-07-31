@@ -19,19 +19,21 @@ El host debe proveer:
 
 Envolvé la app con `ThemeProvider` (podés usar `createTheme()` de esta lib o un theme compatible).
 
-## Install desde GitHub (privado)
+## Install desde GitHub
+
+Repo org: `UNIVERSALSOFTPROJECTS/wl-sections-library` (privado).
+
+Local (SSH con host `github-universalsoft`):
 
 ```bash
-npm install git+ssh://git@github-universalsoft/MauUniversal/wl-sections-library.git#v0.1.0
+npm install git+ssh://git@github-universalsoft/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.2
 ```
 
-O en `package.json`:
+En `package.json` (HTTPS; Cloudflare Pages necesita `GITHUB_TOKEN` con acceso al repo):
 
 ```json
-"@wl/sections-library": "git+ssh://git@github-universalsoft/MauUniversal/wl-sections-library.git#v0.1.0"
+"@wl/sections-library": "git+https://github.com/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.2"
 ```
-
-> El host SSH `github-universalsoft` debe estar en tu `~/.ssh/config` (IdentityFile de la cuenta MauUniversal).
 
 Al instalar desde git, el script `prepare` corre `build:lib` y genera `dist/`.
 

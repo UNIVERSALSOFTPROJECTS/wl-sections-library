@@ -26,13 +26,13 @@ Repo org: `UNIVERSALSOFTPROJECTS/wl-sections-library` (privado).
 Local (SSH con host `github-universalsoft`):
 
 ```bash
-npm install git+ssh://git@github-universalsoft/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.3
+npm install git+ssh://git@github-universalsoft/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.4
 ```
 
 En `package.json` (HTTPS; Cloudflare Pages necesita `GITHUB_TOKEN` con acceso al repo):
 
 ```json
-"@wl/sections-library": "git+https://github.com/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.3"
+"@wl/sections-library": "git+https://github.com/UNIVERSALSOFTPROJECTS/wl-sections-library.git#v0.1.4"
 ```
 
 Al instalar desde git, el script `prepare` corre `build:lib` y genera `dist/`.

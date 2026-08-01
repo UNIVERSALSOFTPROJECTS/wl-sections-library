@@ -1,39 +1,21 @@
-import { pxToRem } from "../utils/styles-utils";
+import { createColorScale, pxToRem } from "../utils/styles-utils";
 
 const DEFAULT_PRIMARY = "#E91E91";
+const DEFAULT_SECONDARY = "#8B3B8B";
 
-export const createTheme = (primaryColor: string = DEFAULT_PRIMARY) => {
+export const createTheme = (
+  primaryColor: string = DEFAULT_PRIMARY,
+  secondaryColor: string = DEFAULT_SECONDARY,
+) => {
   return {
     color: {
       brand: {
         primary: primaryColor,
+        secondary: secondaryColor,
       },
 
-      primary: {
-        50: "#FDE9F4",
-        100: "#FACEE7",
-        200: "#F7AAD5",
-        300: "#F381C1",
-        400: "#EE50A9",
-        500: "#E91E91",
-        600: "#C61A7B",
-        700: "#A31566",
-        800: "#79104B",
-        900: "#4F0A31",
-      },
-
-      secondary: {
-        50: "#F3EBF3",
-        100: "#E5D4E5",
-        200: "#D3B4D3",
-        300: "#BE91BE",
-        400: "#A565A5",
-        500: "#8B3B8B",
-        600: "#763176",
-        700: "#612961",
-        800: "#481E48",
-        900: "#2F142F",
-      },
+      primary: createColorScale(primaryColor),
+      secondary: createColorScale(secondaryColor),
 
       neutral: {
         50: "#F5F5F5",
@@ -57,11 +39,11 @@ export const createTheme = (primaryColor: string = DEFAULT_PRIMARY) => {
           loading: primaryColor,
         },
         secondary: {
-          default: "#8B3A8B",
-          hover: "#9B569B",
-          pressed: "#6C2D6C",
-          disabled: "#502650",
-          loading: "#8B3A8B",
+          default: secondaryColor,
+          hover: `color-mix(in srgb, ${secondaryColor} 85%, white)`,
+          pressed: `color-mix(in srgb, ${secondaryColor} 72%, black)`,
+          disabled: `color-mix(in srgb, ${secondaryColor} 45%, black)`,
+          loading: secondaryColor,
         },
       },
 

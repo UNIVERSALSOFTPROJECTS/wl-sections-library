@@ -21,6 +21,7 @@ const themeUsageCode = `import { theme } from "@shared/theme/Theme";
 // En styled-components: \${({ theme }) => theme.color.primary[500]}
 
 theme.color.brand.primary
+theme.color.brand.secondary
 theme.color.primary[500]
 theme.color.secondary[500]
 theme.color.neutral[900]
@@ -63,7 +64,7 @@ export const ThemeColorsSection = () => {
     return (
         <DocSection
             title="Theme Colors"
-            description="Paleta completa del theme. Las escalas primary / secondary / neutral (50–900) se mantienen para uso general. Los botones usan color.button.primary/secondary y danger/success/warning con estados default/hover/pressed/disabled/loading. brand, text.tertiary y background.tertiary dependen de la marca activa."
+            description="Paleta completa del theme. Las escalas primary / secondary (50–900) se derivan de brand.primary/secondary vía color-mix; neutral sigue fija. Los botones usan color.button.primary/secondary. brand, text.tertiary y background.tertiary dependen de la marca activa."
         >
             <DocSectionBlock title="Uso">
                 <DocCodeBlock code={themeUsageCode} />
@@ -74,6 +75,7 @@ export const ThemeColorsSection = () => {
                     <ColorTokenPathElement>color.brand</ColorTokenPathElement>
                     <ColorSemanticRowElement>
                         <ColorSwatch label="primary" value={color.brand.primary} />
+                        <ColorSwatch label="secondary" value={color.brand.secondary} />
                     </ColorSemanticRowElement>
                 </DocPreviewElement>
             </DocSectionBlock>

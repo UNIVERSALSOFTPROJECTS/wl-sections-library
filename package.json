@@ -1,6 +1,6 @@
 {
   "name": "@wl/sections-library",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "White-label sections library (UI + section registry) for casino platforms",
   "type": "module",

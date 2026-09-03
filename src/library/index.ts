@@ -66,3 +66,5 @@ export { TextInput } from "@shared/ui/inputs/textInput/TextInput";
 export { OffCanvas } from "@shared/ui/overlays/offCanvas/OffCanvas";
 export type { OffCanvasSide, OffCanvasSurface } from "@shared/ui/overlays/offCanvas/OffCanvas";
 export { Tag } from "@shared/ui/tags/tag/Tag";
+export { Loader } from "@shared/ui/loader/loader/Loader";
+export type { LoaderSize, LoaderTone } from "@shared/ui/loader/loader/Loader";

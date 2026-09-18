@@ -1,4 +1,11 @@
+import { CasinoGameFilterSection } from "../components/casinoGameFilterSection/CasinoGameFilterSection";
+import { CasinoGameRailSection } from "../components/casinoGameRailSection/CasinoGameRailSection";
 import { CasinoGamesSection } from "../components/casinoGamesSection/CasinoGamesSection";
+import { CasinoMenuSection } from "../components/casinoMenuSection/CasinoMenuSection";
+import { CasinoProvidersSection } from "../components/casinoProvidersSection/CasinoProvidersSection";
+import { CasinoTournamentRailSection } from "../components/casinoTournamentRailSection/CasinoTournamentRailSection";
+import { CasinoPromoCardSection } from "../components/casinoPromoCardSection/CasinoPromoCardSection";
+import { FeaturedGamesSection } from "../components/featuredGamesSection/FeaturedGamesSection";
 import { FeaturedPromotionsSection } from "../components/featuredPromotionsSection/FeaturedPromotionsSection";
 import { FooterSection } from "../components/footerSection/FooterSection";
 import { GlobalNavSection } from "../components/globalNavSection/GlobalNavSection";
@@ -41,12 +48,19 @@ export const DocsSectionsPage = () => {
         <DocsSectionsSectionsElement>
           <GlobalNavSection />
           <FooterSection />
+          <CasinoPromoCardSection />
+          <CasinoMenuSection />
+          <CasinoGameFilterSection />
+          <CasinoProvidersSection />
           <HeroBannerSection />
           <FeaturedPromotionsSection />
           <RecommendationsSection />
           <SportsEventsSection />
           <CasinoGamesSection />
           <LatestWinnersSection />
+          <FeaturedGamesSection />
+          <CasinoGameRailSection />
+          <CasinoTournamentRailSection />
           <HeroPlaceholderSection />
         </DocsSectionsSectionsElement>
       </DocsSectionsContentElement>

@@ -1,12 +1,17 @@
 import { pxToRem } from "../utils/styles-utils";
 
 const DEFAULT_PRIMARY = "#E91E91";
+const DEFAULT_SECONDARY = "#8B3B8B";
 
-export const createTheme = (primaryColor: string = DEFAULT_PRIMARY) => {
+export const createTheme = (
+  primaryColor: string = DEFAULT_PRIMARY,
+  secondaryColor: string = DEFAULT_SECONDARY,
+) => {
   return {
     color: {
       brand: {
         primary: primaryColor,
+        secondary: secondaryColor,
       },
 
       primary: {

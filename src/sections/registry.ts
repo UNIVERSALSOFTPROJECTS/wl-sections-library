@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { CasinoGameFilter, CasinoGameRail, CasinoMenu, CasinoPromoCard, CasinoProviders, CasinoTournamentRail, FeaturedGames } from "./casino";
 import { Footer } from "./footer";
 import { GlobalNav } from "./globalNav";
 import {
@@ -6,10 +7,10 @@ import {
   FeaturedPromotions,
   HeroBanner,
   HeroPlaceholder,
-  LatestWinners,
   Recommendations,
   SportsEvents,
 } from "./home";
+import { LatestWinners } from "./latestWinners";
 import type { SectionDefinition, SectionType } from "./types";
 
 export const sectionRegistry: Record<SectionType, ComponentType> = {
@@ -22,6 +23,13 @@ export const sectionRegistry: Record<SectionType, ComponentType> = {
   CasinoGames,
   LatestWinners,
   HeroPlaceholder,
+  FeaturedGames,
+  CasinoMenu,
+  CasinoPromoCard,
+  CasinoGameRail,
+  CasinoGameFilter,
+  CasinoProviders,
+  CasinoTournamentRail,
 };
 
 export const sectionCatalog: SectionDefinition[] = [
@@ -38,6 +46,20 @@ export const sectionCatalog: SectionDefinition[] = [
     scope: "global",
     description:
       "Footer de layout: marca, redes, nav, pagos, badges y legal. Slot fijo del chrome.",
+  },
+  {
+    type: "CasinoPromoCard",
+    label: "Promo de Casino",
+    scope: "casino",
+    description:
+      "Card de promoción del chrome de casino (layout.casino.promo). Slot fijo, no va en pages.casino.",
+  },
+  {
+    type: "CasinoMenu",
+    label: "Menú de Casino",
+    scope: "casino",
+    description:
+      "Submenú del chrome de casino (layout.casino.menu). Items inyectables; el host navega. Slot fijo.",
   },
   {
     type: "HeroBanner",
@@ -73,13 +95,49 @@ export const sectionCatalog: SectionDefinition[] = [
   {
     type: "LatestWinners",
     label: "Últimos Ganadores",
-    scope: "home",
-    description: "Lista de ganadores con tabs Live y Top 10.",
+    scope: "shared",
+    description:
+      "Lista de ganadores con tabs Live y Top 10. Sección de página reutilizable (home, casino, etc.).",
   },
   {
     type: "HeroPlaceholder",
     label: "Hero (placeholder)",
     scope: "home",
     description: "Bloque hero de ejemplo para el editor y el runtime.",
+  },
+  {
+    type: "FeaturedGames",
+    label: "Destacados",
+    scope: "casino",
+    description:
+      "Carrusel full-width de juegos destacados con título, dots en la fila del título y CTA.",
+  },
+  {
+    type: "CasinoGameRail",
+    label: "Riel de juegos",
+    scope: "casino",
+    description:
+      "Carrusel reutilizable de cards de juego (Top 10, Últimos jugados, Popular Ahora, Top Juegos, Lanzamientos, Jackpots, Megaways).",
+  },
+  {
+    type: "CasinoGameFilter",
+    label: "Filtro de juegos",
+    scope: "casino",
+    description:
+      "Chips horizontales para filtrar el catálogo de casino (Todos, Lanzamientos, Populares, etc.).",
+  },
+  {
+    type: "CasinoProviders",
+    label: "Proveedores",
+    scope: "casino",
+    description:
+      "Título Proveedores, búsqueda y chips mock de proveedor (Todos, PRAGMATIC, DARWIN, ESPORTS).",
+  },
+  {
+    type: "CasinoTournamentRail",
+    label: "Torneos activos",
+    scope: "casino",
+    description:
+      "Lista de torneos con título estilo CasinoGameRail y cards de premio, jugadores y tiempo.",
   },
 ];

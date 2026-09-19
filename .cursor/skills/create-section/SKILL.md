@@ -8,17 +8,19 @@ description: Scaffolds a new exportable section under src/sections/<name>/, regi
 1. Nombre en `camelCase` de carpeta / `PascalCase` de componente (ej. `featuredPromotions` / `FeaturedPromotions`).
 2. Elegí scope:
    - home → `src/sections/home/<nombre>/`
+   - casino → `src/sections/casino/<nombre>/`
+   - shared (varias páginas) → `src/sections/<nombre>/` (ej. `latestWinners`)
    - global/chrome → `src/sections/<nombre>/` (ej. `globalNav`)
 3. Crear:
 ```
-src/sections/home/<nombre>/   # o src/sections/<nombre>/ si es global
+src/sections/home/<nombre>/   # o casino/<nombre>/, o src/sections/<nombre>/ si es shared/global
   <Nombre>.tsx
   <Nombre>.elements.ts
   index.ts
 ```
-4. Si es home, re-exportar en `sections/home/index.ts`.
+4. Si es home, re-exportar en `sections/home/index.ts`. Si es casino, en `sections/casino/index.ts`.
 5. Agregar `SectionType` en `sections/types.ts`.
-6. Registrar en `sectionRegistry` + `sectionCatalog` con `scope: "home" | "global"`.
+6. Registrar en `sectionRegistry` + `sectionCatalog` con `scope: "home" | "global" | "casino" | "shared"`.
 7. Exportar en `sections/index.ts` y `library/index.ts`.
 8. Documentar en `features/docsSections` y montar en la page.
 9. Usar solo `@shared/ui`, theme e icons — sin cross-feature.

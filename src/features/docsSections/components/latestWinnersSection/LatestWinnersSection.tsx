@@ -1,4 +1,4 @@
-import { LatestWinners } from "@sections/home/latestWinners";
+import { LatestWinners } from "@sections/latestWinners";
 import { DocCodeBlock } from "../docCodeBlock/DocCodeBlock";
 import { DocSection, DocSectionBlock } from "../docSection/DocSection";
 import {
@@ -18,7 +18,7 @@ export const LatestWinnersSection = () => {
   return (
     <DocSection
       title="LatestWinners"
-      description="Lista de últimos ganadores con tabs Live / Top 10. Type: LatestWinners."
+      description="Lista de últimos ganadores con tabs Live / Top 10. Type: LatestWinners. Scope shared: home, casino u otras páginas."
     >
       <DocSectionBlock title="Type (registry / JSON)">
         <DocCodeBlock code='"LatestWinners"' />

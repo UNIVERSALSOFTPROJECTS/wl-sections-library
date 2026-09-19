@@ -539,6 +539,24 @@ import { Tag } from "@shared/ui/tags/tag/Tag";
   <Tag variant="info">Slide 4</Tag>
 </Carousel>
 
+<Carousel
+  title="Destacados"
+  showDots
+  dotsPlacement="title"
+  dotsTone="brand"
+  slideSize="100%"
+>
+  <div>Card A</div>
+  <div>Card B</div>
+  <div>Card C</div>
+</Carousel>
+
+<Carousel title="Top 10" action={<button>Ver</button>} slideSize="32%" gap={12}>
+  <div>Card A</div>
+  <div>Card B</div>
+  <div>Card C</div>
+</Carousel>
+
 <Carousel loop showArrows showDots slideSize="50%">
   <div>Card A</div>
   <div>Card B</div>
@@ -589,16 +607,35 @@ export const carouselProps = [
         description: "Muestra flechas prev/next (IconButton).",
     },
     {
+        name: "title",
+        type: "ReactNode",
+        default: "—",
+        description: "Título opcional en la fila superior. Puede incluir icono + texto.",
+    },
+    {
+        name: "action",
+        type: "ReactNode",
+        default: "—",
+        description: "Acción a la derecha del título (ej. Ver). Convive con dotsPlacement=\"title\".",
+    },
+    {
         name: "showDots",
         type: "boolean",
         default: "false",
         description: "Muestra indicadores de posición.",
     },
     {
+        name: "dotsPlacement",
+        type: '"bottom" | "overlay" | "title"',
+        default: '"bottom"',
+        description:
+            "Dónde van los dots. title = a la derecha de la fila del título. overlay deja dotsOverlay como alias.",
+    },
+    {
         name: "dotsOverlay",
         type: "boolean",
         default: "false",
-        description: "Coloca los dots encima del carousel (abajo al centro).",
+        description: "Alias de dotsPlacement=\"overlay\" (abajo al centro, encima del carousel).",
     },
     {
         name: "dotsBottom",

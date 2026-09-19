@@ -12,7 +12,44 @@ interface CarouselSlideElementProps {
 
 export const CarouselElement = styled.div`
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+`;
+
+export const CarouselHeaderElement = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: ${({ theme }) => theme.spacing(1)};
+    width: 100%;
+    margin-bottom: ${({ theme }) => theme.spacing(1.5)};
+`;
+
+export const CarouselHeaderActionsElement = styled.div`
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: ${({ theme }) => theme.spacing(1)};
+`;
+
+export const CarouselTitleElement = styled.h2`
+    display: inline-flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing(1)};
+    margin: 0;
+    min-width: 0;
+    color: ${({ theme }) => theme.color.text.primary};
+    font-family: ${({ theme }) => theme.typography.fontFamily.primary};
+    font-size: ${pxToRem(20)};
+    font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
+    line-height: 1.3;
+
+    svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+    }
 `;
 
 export const CarouselViewportElement = styled.div`
@@ -49,12 +86,18 @@ export const CarouselArrowNextElement = styled.div`
     transform: translateY(-50%);
 `;
 
-export const CarouselDotsElement = styled.div<{ $overlay?: boolean; $bottom?: number }>`
+export const CarouselDotsElement = styled.div<{
+    $overlay?: boolean;
+    $bottom?: number;
+    $inHeader?: boolean;
+}>`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: ${({ $inHeader }) => ($inHeader ? "flex-end" : "center")};
     gap: ${({ theme }) => theme.spacing(1)};
-    margin-top: ${({ theme, $overlay }) => ($overlay ? 0 : theme.spacing(2))};
+    margin-top: ${({ theme, $overlay, $inHeader }) =>
+        $overlay || $inHeader ? 0 : theme.spacing(2)};
+    flex-shrink: 0;
 
     ${({ $overlay, $bottom = 12 }) =>
         $overlay &&
@@ -67,6 +110,7 @@ export const CarouselDotsElement = styled.div<{ $overlay?: boolean; $bottom?: nu
     `}
 `;
 
+export type CarouselDotsPlacement = "bottom" | "overlay" | "title";
 export type CarouselDotsTone = "light" | "brand";
 
 export const CarouselDotElement = styled.button<{

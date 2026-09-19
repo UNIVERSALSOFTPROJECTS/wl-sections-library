@@ -15,6 +15,17 @@ import {
 } from "../docSection/DocSection.elements";
 import { carouselProps, carouselUsageCode } from "../../data";
 
+const DemoActionElement = styled.button`
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: ${({ theme }) => theme.color.brand.primary};
+    font-family: ${({ theme }) => theme.typography.fontFamily.primary};
+    font-size: ${pxToRem(13)};
+    font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+    cursor: pointer;
+`;
+
 const DemoSlideElement = styled.div`
     display: flex;
     align-items: center;
@@ -80,6 +91,36 @@ export const CarouselSection = () => {
                         <DocVariantTitleElement>arrows + loop</DocVariantTitleElement>
                         <Carousel loop showArrows showDots slideSize="55%" gap={12}>
                             {demoSlides.map((label) => (
+                                <DemoSlideElement key={label}>{label}</DemoSlideElement>
+                            ))}
+                        </Carousel>
+                    </DocVariantGroupElement>
+
+                    <DocVariantGroupElement>
+                        <DocVariantTitleElement>title + dots a la derecha</DocVariantTitleElement>
+                        <Carousel
+                            title="Destacados"
+                            showDots
+                            dotsPlacement="title"
+                            dotsTone="brand"
+                            gap={12}
+                            slideSize="80%"
+                        >
+                            {demoSlides.slice(0, 3).map((label) => (
+                                <DemoSlideElement key={label}>{label}</DemoSlideElement>
+                            ))}
+                        </Carousel>
+                    </DocVariantGroupElement>
+
+                    <DocVariantGroupElement>
+                        <DocVariantTitleElement>title + Ver</DocVariantTitleElement>
+                        <Carousel
+                            title="Top 10"
+                            action={<DemoActionElement type="button">Ver</DemoActionElement>}
+                            gap={12}
+                            slideSize="32%"
+                        >
+                            {demoSlides.slice(0, 4).map((label) => (
                                 <DemoSlideElement key={label}>{label}</DemoSlideElement>
                             ))}
                         </Carousel>

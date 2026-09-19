@@ -16,12 +16,14 @@ alwaysApply: true
 
 - `sections/globalNav/` y `sections/footer/` → chrome de layout (slots fijos).
 - `sections/home/<nombre>/` → bloques exclusivos del home.
-- Exportá home desde `sections/home/index.ts`; el registry sigue en `sections/registry.ts`.
+- `sections/casino/<nombre>/` → bloques exclusivos de casino.
+- `sections/<nombre>/` (p. ej. `latestWinners`) → secciones de página reutilizables entre rutas (`scope: "shared"`).
+- Exportá home desde `sections/home/index.ts` y casino desde `sections/casino/index.ts`; el registry sigue en `sections/registry.ts`.
 
 ## Registry
 
 - Toda sección exportable tiene un `SectionType` único en `sections/types.ts`.
-- Debe existir en `sectionRegistry` y `sectionCatalog` (con `scope: "global" | "home"`).
+- Debe existir en `sectionRegistry` y `sectionCatalog` (con `scope: "global" | "home" | "casino" | "shared"`).
 - No renderizar secciones “sueltas” sin registro si están pensadas para el JSON del BO.
 
 ## Composición

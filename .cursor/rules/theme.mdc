@@ -10,7 +10,7 @@ Fuente única de tokens: `@shared/theme/Theme.ts`. Se accede vía `({ theme }) =
 
 ## Tokens disponibles
 
-- `color.brand.primary` -> color de marca (vía `createTheme(primaryColor)` / JSON de marca; default `#E91E91`).
+- `color.brand.primary` / `color.brand.secondary` -> colores de marca (vía `createTheme(primaryColor, secondaryColor)` / JSON de marca; defaults `#E91E91` / `#8B3B8B`).
 - `color.primary` / `color.secondary` / `color.neutral` -> escalas 50..900 (uso general; no son los tokens exactos del Button).
 - `color.button.primary` -> estados derivados del `primaryColor` de marca (`default`/`loading` = brand; hover/pressed/disabled vía `color-mix`). `color.button.secondary` -> escala fija secondary.
 - `zIndex.floating` -> FABs / botones flotantes (entre header y dropdown).
@@ -30,6 +30,6 @@ Fuente única de tokens: `@shared/theme/Theme.ts`. Se accede vía `({ theme }) =
 
 - Tamaños de fuente y radios en `rem` vía `pxToRem(px)` de `@shared/utils/styles-utils`.
 - Al agregar un token nuevo al theme, agrégalo también a `DefaultTheme` en `shared/types/styled.d.ts` (con `typeof theme.X`).
-- No dupliques valores: el rosa de marca vive solo en `brand.primary`; `text.tertiary` y `background.tertiary` lo referencian.
+- No dupliques valores: los colores de marca viven solo en `brand.primary` / `brand.secondary`; `text.tertiary` y `background.tertiary` referencian el primary.
 - `background` (shorthand), NO `background-color`, para soportar tanto colores como gradientes.
 - No hay `VITE_BRAND`: el primary se setea con `createTheme(primaryColor)` o el JSON de marca del consumidor.

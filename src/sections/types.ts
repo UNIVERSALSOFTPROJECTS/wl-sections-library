@@ -7,9 +7,16 @@ export type SectionType =
   | "SportsEvents"
   | "CasinoGames"
   | "LatestWinners"
-  | "HeroPlaceholder";
+  | "HeroPlaceholder"
+  | "FeaturedGames"
+  | "CasinoMenu"
+  | "CasinoPromoCard"
+  | "CasinoGameRail"
+  | "CasinoGameFilter"
+  | "CasinoProviders"
+  | "CasinoTournamentRail";
 
-export type SectionScope = "global" | "home";
+export type SectionScope = "global" | "home" | "casino" | "shared";
 
 export interface SectionDefinition {
   type: SectionType;

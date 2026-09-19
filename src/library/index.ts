@@ -26,7 +26,6 @@ export {
   FeaturedPromotions,
   HeroBanner,
   HeroPlaceholder,
-  LatestWinners,
   Recommendations,
   SportsEvents,
 } from "@sections/home";
@@ -35,14 +34,53 @@ export type {
   CasinoGameCardData,
   FeaturedPromoCardData,
   HeroBannerSlideData,
-  LatestWinnerCardData,
-  LatestWinnersTab,
   PromoBadgeVariant,
   RecommendationBadgeVariant,
   RecommendationCardData,
   SportsEventCardData,
   SportsEventOdd,
 } from "@sections/home";
+export { LatestWinners } from "@sections/latestWinners";
+export type { LatestWinnerCardData, LatestWinnersTab } from "@sections/latestWinners";
+export {
+  CasinoMenu,
+  CasinoPromoCard,
+  CasinoGameRail,
+  CasinoGameFilter,
+  CasinoProviders,
+  CasinoTournamentRail,
+  FeaturedGames,
+  casinoMenuDefaultActiveId,
+  casinoMenuItems,
+  casinoPromoCard,
+  casinoGameFilterDefaultActiveId,
+  casinoGameFilterItems,
+  casinoLiveFilterItems,
+  casinoProviderFilters,
+  casinoProvidersDefaultActiveId,
+  casinoProvidersTitle,
+} from "@sections/casino";
+export type {
+  CasinoMenuItem,
+  CasinoMenuItemIconId,
+  CasinoPromoCardData,
+  CasinoGameRailCardData,
+  CasinoGameRailCaptionTone,
+  CasinoGameRailProps,
+  CasinoGameRailTitleTone,
+  CasinoGameRailVariant,
+  CasinoGameFilterIconId,
+  CasinoGameFilterItem,
+  CasinoGameFilterProps,
+  CasinoGameFilterVariant,
+  CasinoProviderFilterItem,
+  CasinoProvidersProps,
+  CasinoTournamentCardData,
+  CasinoTournamentRailProps,
+  CasinoTournamentRailVariant,
+  CasinoTournamentTone,
+  FeaturedGameCardData,
+} from "@sections/casino";
 
 export { Button } from "@shared/ui/buttons/button/Button";
 export { FloatingButton } from "@shared/ui/buttons/floatingButton/FloatingButton";

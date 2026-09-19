@@ -11,6 +11,4 @@ export { SportsEvents } from "./sportsEvents";
 export type { SportsEventCardData, SportsEventOdd } from "./sportsEvents";
 export { CasinoGames } from "./casinoGames";
 export type { CasinoGameBadgeVariant, CasinoGameCardData } from "./casinoGames";
-export { LatestWinners } from "./latestWinners";
-export type { LatestWinnerCardData, LatestWinnersTab } from "./latestWinners";
 export { HeroPlaceholder } from "./heroPlaceholder";

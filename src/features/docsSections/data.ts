@@ -409,16 +409,16 @@ export const casinoGamesProps = [
 
 export const latestWinnersUsageCode = `import { LatestWinners } from "@wl/sections-library";
 // o en el playground:
-import { LatestWinners } from "@sections/home/latestWinners";
+import { LatestWinners } from "@sections/latestWinners";
 
 <LatestWinners />
 `;
 
 export const latestWinnersJsonExample = `{
   "pages": {
-    "home": [
-      { "type": "LatestWinners" }
-    ]
+    "home": [{ "type": "LatestWinners" }],
+    "casino": [{ "type": "LatestWinners" }],
+    "casinoLive": [{ "type": "LatestWinners" }]
   }
 }`;
 
@@ -448,4 +448,441 @@ export const latestWinnersProps = [
     description: "Tab activo al montar.",
   }
 ] as const;
+
+export const featuredGamesUsageCode = `import { FeaturedGames } from "@wl/sections-library";
+// o en el playground:
+import { FeaturedGames } from "@sections/casino/featuredGames";
+
+<FeaturedGames />
+`;
+
+export const featuredGamesJsonExample = `{
+  "pages": {
+    "casino": [
+      { "type": "FeaturedGames" }
+    ]
+  }
+}`;
+
+export const featuredGamesProps = [
+  {
+    name: "title",
+    type: "string",
+    default: "\"Destacados\"",
+    description: "Título de la sección (con icono sparkles y dots a la derecha).",
+  },
+  {
+    name: "items",
+    type: "FeaturedGameCardData[]",
+    default: "3 cards demo",
+    description: "Cards del carrusel (id, title, provider, image, badge?, ctaLabel?).",
+  }
+] as const;
+
+export const casinoGameRailUsageCode = `import { CasinoGameRail } from "@wl/sections-library";
+// o en el playground:
+import { CasinoGameRail } from "@sections/casino/casinoGameRail";
+
+<CasinoGameRail variant="rank" />
+<CasinoGameRail variant="time" />
+<CasinoGameRail variant="popular" />
+<CasinoGameRail variant="topGames" />
+<CasinoGameRail variant="launches" />
+<CasinoGameRail variant="jackpots" />
+<CasinoGameRail variant="megaways" />
+<CasinoGameRail variant="forYou" />
+<CasinoGameRail variant="basedOn" />
+<CasinoGameRail variant="similar" />
+<CasinoGameRail variant="trending" />
+<CasinoGameRail variant="upcoming" />
+<CasinoGameRail variant="liveTop" />
+<CasinoGameRail variant="liveRoulette" />
+<CasinoGameRail variant="liveBlackjack" />
+<CasinoGameRail variant="liveBaccarat" />
+<CasinoGameRail variant="liveGameShows" />
+<CasinoGameRail variant="livePoker" />
+<CasinoGameRail variant="favRecent" />
+<CasinoGameRail variant="favPlayed" />
+<CasinoGameRail variant="favSlots" />
+<CasinoGameRail variant="favLive" />
+<CasinoGameRail variant="favDiscover" />
+<CasinoGameRail variant="tourSoon" />
+<CasinoGameRail variant="tourMine" />
+<CasinoGameRail variant="tourDone" />
+`;
+
+export const casinoGameRailJsonExample = `{
+  "pages": {
+    "casino": [
+      { "type": "FeaturedGames" },
+      { "type": "CasinoGameRail", "props": { "variant": "rank" } },
+      { "type": "CasinoGameRail", "props": { "variant": "time" } },
+      { "type": "LatestWinners" },
+      { "type": "CasinoGameRail", "props": { "variant": "popular" } },
+      { "type": "CasinoGameRail", "props": { "variant": "topGames" } },
+      { "type": "CasinoProviders" },
+      { "type": "CasinoGameRail", "props": { "variant": "launches" } },
+      { "type": "CasinoGameRail", "props": { "variant": "jackpots" } },
+      { "type": "CasinoGameRail", "props": { "variant": "megaways" } }
+    ],
+    "casinoRecommended": [
+      { "type": "CasinoGameRail", "props": { "variant": "forYou" } },
+      { "type": "CasinoGameRail", "props": { "variant": "basedOn" } },
+      { "type": "CasinoGameRail", "props": { "variant": "similar" } },
+      { "type": "CasinoGameRail", "props": { "variant": "trending" } },
+      { "type": "CasinoGameRail", "props": { "variant": "upcoming" } }
+    ],
+    "casinoLive": [
+      { "type": "CasinoGameFilter", "props": { "variant": "live" } },
+      { "type": "CasinoGameRail", "props": { "variant": "liveTop" } },
+      { "type": "CasinoGameRail", "props": { "variant": "liveRoulette" } },
+      { "type": "LatestWinners" },
+      { "type": "CasinoProviders" },
+      { "type": "CasinoGameRail", "props": { "variant": "liveBlackjack" } },
+      { "type": "CasinoGameRail", "props": { "variant": "liveBaccarat" } },
+      { "type": "CasinoGameRail", "props": { "variant": "liveGameShows" } },
+      { "type": "CasinoGameRail", "props": { "variant": "livePoker" } }
+    ],
+    "casinoFavorites": [
+      { "type": "CasinoGameRail", "props": { "variant": "favRecent" } },
+      { "type": "CasinoGameRail", "props": { "variant": "favPlayed" } },
+      { "type": "CasinoGameRail", "props": { "variant": "favSlots" } },
+      { "type": "CasinoGameRail", "props": { "variant": "favLive" } },
+      { "type": "CasinoGameRail", "props": { "variant": "favDiscover" } }
+    ],
+    "casinoTournaments": [
+      { "type": "CasinoTournamentRail", "props": { "variant": "active" } },
+      { "type": "CasinoGameRail", "props": { "variant": "tourSoon" } },
+      { "type": "CasinoGameRail", "props": { "variant": "tourMine" } },
+      { "type": "CasinoGameRail", "props": { "variant": "tourDone" } }
+    ]
+  }
+}`;
+
+export const casinoGameRailProps = [
+  {
+    name: "variant",
+    type: '"rank" | "time" | "popular" | "topGames" | "launches" | "jackpots" | "megaways" | "forYou" | "basedOn" | "similar" | "trending" | "upcoming" | "liveTop" | "liveRoulette" | "liveBlackjack" | "liveBaccarat" | "liveGameShows" | "livePoker" | "favRecent" | "favPlayed" | "favSlots" | "favLive" | "favDiscover" | "tourSoon" | "tourMine" | "tourDone"',
+    default: '"rank"',
+    description: "Preset: título, icono y mock de items.",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: "según variant",
+    description: "Título de la fila. Override del preset.",
+  },
+  {
+    name: "icon",
+    type: '"trophy" | "clock" | "flame" | "sparkles" | "coins" | "gem" | "star" | "gamepad" | "users" | "trending" | "dices" | "cards" | "tent" | "spade" | "heart" | "calendar" | "target" | "check"',
+    default: "según variant",
+    description: "Icono serializable del título.",
+  },
+  {
+    name: "items",
+    type: "CasinoGameRailCardData[]",
+    default: "mock del variant",
+    description: "Cards del riel (id, title, provider, image, badge?, badgeTone?, rtp?, titleTone?, highlight?, caption?, captionTone?).",
+  },
+  {
+    name: "seeAllLabel",
+    type: "string",
+    default: "según variant",
+    description: "Label de la acción a la derecha del título. Finalizados usa Ver historial.",
+  },
+  {
+    name: "onSeeAllPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Ver. El host navega. Sin react-router en la lib.",
+  }
+] as const;
+
+export const casinoPromoCardUsageCode = `import { CasinoPromoCard } from "@wl/sections-library";
+// o en el playground:
+import { CasinoPromoCard } from "@sections/casino/casinoPromoCard";
+
+<CasinoPromoCard />
+<CasinoPromoCard
+  title="100% hasta $500 + 50 FS"
+  onCtaPress={() => claimPromo()}
+/>
+`;
+
+export const casinoPromoCardJsonExample = `{
+  "layout": {
+    "casino": {
+      "promo": { "type": "CasinoPromoCard" },
+      "menu": { "type": "CasinoMenu" }
+    }
+  },
+  "pages": {
+    "casino": []
+  }
+}`;
+
+export const casinoPromoCardProps = [
+  {
+    name: "badge",
+    type: "string",
+    default: "\"Promoción\"",
+    description: "Chip superior de la card.",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: "\"100% hasta $500 + 50 FS\"",
+    description: "Título de la promo.",
+  },
+  {
+    name: "subtitle",
+    type: "string",
+    default: "\"Válido hasta el 30 de abril\"",
+    description: "Texto secundario (vigencia).",
+  },
+  {
+    name: "cta",
+    type: "string",
+    default: "\"Reclamar\"",
+    description: "Label del botón.",
+  },
+  {
+    name: "onCtaPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback del CTA. El host reclama / navega. Sin react-router en la lib.",
+  }
+] as const;
+
+export const casinoMenuUsageCode = `import { CasinoMenu } from "@wl/sections-library";
+// o en el playground:
+import { CasinoMenu } from "@sections/casino/casinoMenu";
+
+<CasinoMenu />
+<CasinoMenu
+  activeId="lobby"
+  onItemPress={(id) => navigate(pathById[id])}
+/>
+`;
+
+export const casinoMenuJsonExample = `{
+  "layout": {
+    "casino": {
+      "promo": { "type": "CasinoPromoCard" },
+      "menu": { "type": "CasinoMenu" }
+    }
+  },
+  "pages": {
+    "casino": []
+  }
+}`;
+
+export const casinoMenuProps = [
+  {
+    name: "items",
+    type: "CasinoMenuItem[]",
+    default: "Lobby / Para mi / En vivo / Favoritos / Torneos",
+    description:
+      "Items a renderizar. Orden = orden visual. Serializable para JSON/BO (id, label, icon, path, end).",
+  },
+  {
+    name: "activeId",
+    type: "string",
+    default: "—",
+    description: "Item activo controlado (típicamente derivado de la ruta en el host).",
+  },
+  {
+    name: "defaultActiveId",
+    type: "string",
+    default: '"lobby"',
+    description: "Activo inicial cuando no hay activeId controlado.",
+  },
+  {
+    name: "onItemPress",
+    type: "(id: string) => void",
+    default: "—",
+    description:
+      "Callback al tocar un item. El host navega. Sin react-router en la lib.",
+  }
+] as const;
+
+export const casinoGameFilterUsageCode = `import { CasinoGameFilter } from "@wl/sections-library";
+// o en el playground:
+import { CasinoGameFilter } from "@sections/casino/casinoGameFilter";
+
+<CasinoGameFilter />
+<CasinoGameFilter variant="live" />
+<CasinoGameFilter
+  activeId="all"
+  onItemPress={(id) => setFilter(id)}
+/>
+`;
+
+export const casinoGameFilterJsonExample = `{
+  "pages": {
+    "casino": [
+      { "type": "CasinoGameFilter" },
+      { "type": "FeaturedGames" }
+    ],
+    "casinoLive": [
+      { "type": "CasinoGameFilter", "props": { "variant": "live" } }
+    ]
+  }
+}`;
+
+export const casinoGameFilterProps = [
+  {
+    name: "variant",
+    type: '"lobby" | "live"',
+    default: '"lobby"',
+    description: "Preset de chips. lobby = categorías con icono; live = Todos / Ruleta / Blackjack / Baccarat / Game Shows / Poker.",
+  },
+  {
+    name: "items",
+    type: "CasinoGameFilterItem[]",
+    default: "según variant",
+    description:
+      "Chips a renderizar. Orden = orden visual. Serializable para JSON/BO (id, label, icon?).",
+  },
+  {
+    name: "activeId",
+    type: "string",
+    default: "—",
+    description: "Chip activo controlado.",
+  },
+  {
+    name: "defaultActiveId",
+    type: "string",
+    default: '"all"',
+    description: "Activo inicial cuando no hay activeId controlado.",
+  },
+  {
+    name: "onItemPress",
+    type: "(id: string) => void",
+    default: "—",
+    description: "Callback al tocar un chip. El host filtra. Sin react-router en la lib.",
+  }
+] as const;
+
+export const casinoProvidersUsageCode = `import { CasinoProviders } from "@wl/sections-library";
+// o en el playground:
+import { CasinoProviders } from "@sections/casino/casinoProviders";
+
+<CasinoProviders />
+<CasinoProviders
+  activeId="all"
+  onFilterPress={(id) => setProvider(id)}
+  onSearchPress={() => openSearch()}
+/>
+`;
+
+export const casinoProvidersJsonExample = `{
+  "pages": {
+    "casino": [
+      { "type": "CasinoProviders" },
+      { "type": "CasinoGameRail", "props": { "variant": "launches" } },
+      { "type": "CasinoGameRail", "props": { "variant": "jackpots" } },
+      { "type": "CasinoGameRail", "props": { "variant": "megaways" } }
+    ]
+  }
+}`;
+
+export const casinoProvidersProps = [
+  {
+    name: "title",
+    type: "string",
+    default: '"Proveedores"',
+    description: "Título de la sección.",
+  },
+  {
+    name: "filters",
+    type: "CasinoProviderFilterItem[]",
+    default: "Todos / PRAGMATIC / DARWIN / ESPORTS",
+    description: "Chips mock de proveedor (id, label).",
+  },
+  {
+    name: "activeId",
+    type: "string",
+    default: "—",
+    description: "Chip activo controlado.",
+  },
+  {
+    name: "defaultActiveId",
+    type: "string",
+    default: '"all"',
+    description: "Activo inicial cuando no hay activeId controlado.",
+  },
+  {
+    name: "onFilterPress",
+    type: "(id: string) => void",
+    default: "—",
+    description: "Callback al tocar un chip. El host filtra. Sin react-router en la lib.",
+  },
+  {
+    name: "onSearchPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback del ícono de búsqueda.",
+  }
+] as const;
+
+export const casinoTournamentRailUsageCode = `import { CasinoTournamentRail } from "@wl/sections-library";
+// o en el playground:
+import { CasinoTournamentRail } from "@sections/casino/casinoTournamentRail";
+
+<CasinoTournamentRail variant="active" />
+<CasinoTournamentRail
+  title="Torneos Activos"
+  onJoinPress={(id) => joinTournament(id)}
+/>
+`;
+
+export const casinoTournamentRailJsonExample = `{
+  "pages": {
+    "casinoTournaments": [
+      { "type": "CasinoTournamentRail", "props": { "variant": "active" } }
+    ]
+  }
+}`;
+
+export const casinoTournamentRailProps = [
+  {
+    name: "variant",
+    type: '"active"',
+    default: '"active"',
+    description: "Preset: título e items mock.",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: "según variant",
+    description: "Título de la sección. Override del preset.",
+  },
+  {
+    name: "items",
+    type: "CasinoTournamentCardData[]",
+    default: "mock del variant",
+    description: "Cards (id, title, prize, players, time, tone, badge?, ctaLabel?).",
+  },
+  {
+    name: "seeAllLabel",
+    type: "string",
+    default: '"Ver"',
+    description: "Label de la acción a la derecha del título.",
+  },
+  {
+    name: "onSeeAllPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Ver. El host navega. Sin react-router en la lib.",
+  },
+  {
+    name: "onJoinPress",
+    type: "(id: string) => void",
+    default: "—",
+    description: "Callback de Participar Ahora. El host resuelve la acción.",
+  }
+] as const;
+
+
 

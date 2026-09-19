@@ -17,7 +17,6 @@ export {
   FeaturedPromotions,
   HeroBanner,
   HeroPlaceholder,
-  LatestWinners,
   Recommendations,
   SportsEvents,
 } from "./home";
@@ -26,13 +25,52 @@ export type {
   CasinoGameCardData,
   FeaturedPromoCardData,
   HeroBannerSlideData,
-  LatestWinnerCardData,
-  LatestWinnersTab,
   PromoBadgeVariant,
   RecommendationBadgeVariant,
   RecommendationCardData,
   SportsEventCardData,
   SportsEventOdd,
 } from "./home";
+export { LatestWinners } from "./latestWinners";
+export type { LatestWinnerCardData, LatestWinnersTab } from "./latestWinners";
+export {
+  CasinoMenu,
+  CasinoPromoCard,
+  CasinoGameRail,
+  CasinoGameFilter,
+  CasinoProviders,
+  CasinoTournamentRail,
+  FeaturedGames,
+  casinoMenuDefaultActiveId,
+  casinoMenuItems,
+  casinoPromoCard,
+  casinoGameFilterDefaultActiveId,
+  casinoGameFilterItems,
+  casinoLiveFilterItems,
+  casinoProviderFilters,
+  casinoProvidersDefaultActiveId,
+  casinoProvidersTitle,
+} from "./casino";
+export type {
+  CasinoMenuItem,
+  CasinoMenuItemIconId,
+  CasinoPromoCardData,
+  CasinoGameRailCardData,
+  CasinoGameRailCaptionTone,
+  CasinoGameRailProps,
+  CasinoGameRailTitleTone,
+  CasinoGameRailVariant,
+  CasinoGameFilterIconId,
+  CasinoGameFilterItem,
+  CasinoGameFilterProps,
+  CasinoGameFilterVariant,
+  CasinoProviderFilterItem,
+  CasinoProvidersProps,
+  CasinoTournamentCardData,
+  CasinoTournamentRailProps,
+  CasinoTournamentRailVariant,
+  CasinoTournamentTone,
+  FeaturedGameCardData,
+} from "./casino";
 export { sectionRegistry, sectionCatalog } from "./registry";
 export type { SectionType, SectionDefinition, SectionScope } from "./types";

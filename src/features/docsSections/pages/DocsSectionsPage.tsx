@@ -13,6 +13,7 @@ import { HeroBannerSection } from "../components/heroBannerSection/HeroBannerSec
 import { HeroPlaceholderSection } from "../components/heroPlaceholderSection/HeroPlaceholderSection";
 import { LatestWinnersSection } from "../components/latestWinnersSection/LatestWinnersSection";
 import { RecommendationsSection } from "../components/recommendationsSection/RecommendationsSection";
+import { ShortcutsNavSection } from "../components/shortcutsNavSection/ShortcutsNavSection";
 import { SportsEventsSection } from "../components/sportsEventsSection/SportsEventsSection";
 import {
   DocsSectionsContentElement,
@@ -48,6 +49,7 @@ export const DocsSectionsPage = () => {
         <DocsSectionsSectionsElement>
           <GlobalNavSection />
           <FooterSection />
+          <ShortcutsNavSection />
           <CasinoPromoCardSection />
           <CasinoMenuSection />
           <CasinoGameFilterSection />

@@ -13,6 +13,16 @@ export type {
   FooterSocialItem,
 } from "./footer";
 export {
+  ShortcutsNav,
+  shortcutsNavDefaultActiveId,
+  shortcutsNavItems,
+} from "./shortcutsNav";
+export type {
+  ShortcutsNavItem,
+  ShortcutsNavItemIconId,
+  ShortcutsNavItemKind,
+} from "./shortcutsNav";
+export {
   CasinoGames,
   FeaturedPromotions,
   HeroBanner,

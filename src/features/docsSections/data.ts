@@ -12,12 +12,72 @@ import { GlobalNav } from "@sections/globalNav";
 export const globalNavJsonExample = `{
   "layout": {
     "header": { "type": "GlobalNav" },
-    "footer": { "type": "Footer" }
+    "footer": { "type": "Footer" },
+    "shortcutsNav": { "type": "ShortcutsNav" }
   },
   "pages": {
     "home": []
   }
 }`;
+
+export const shortcutsNavUsageCode = `import { ShortcutsNav } from "@wl/sections-library";
+// o en el playground:
+import { ShortcutsNav } from "@sections/shortcutsNav";
+
+<ShortcutsNav />
+<ShortcutsNav
+  activeId="home"
+  centerLogoSrc={brandLogo}
+  onItemPress={(id) => {
+    if (id === "mas") openMoreCategories();
+  }}
+/>`;
+
+export const shortcutsNavJsonExample = `{
+  "layout": {
+    "header": { "type": "GlobalNav" },
+    "footer": { "type": "Footer" },
+    "shortcutsNav": { "type": "ShortcutsNav" }
+  },
+  "pages": {
+    "home": []
+  }
+}`;
+
+export const shortcutsNavProps = [
+  {
+    name: "items",
+    type: "ShortcutsNavItem[]",
+    default: "Casino / Deportes / Home / Hípicas / Más",
+    description:
+      "Atajos a renderizar. Orden = orden visual. Serializable para JSON/BO (id, label, kind, icon, path).",
+  },
+  {
+    name: "activeId",
+    type: "string",
+    default: "—",
+    description: "Item activo controlado (típicamente derivado de la ruta en el host).",
+  },
+  {
+    name: "defaultActiveId",
+    type: "string",
+    default: '"home"',
+    description: "Activo inicial cuando no hay activeId controlado.",
+  },
+  {
+    name: "centerLogoSrc",
+    type: "string",
+    default: "whiteLogo.jpeg",
+    description: "Logo del botón central (brand). El host puede pasar el de la marca.",
+  },
+  {
+    name: "onItemPress",
+    type: "(id: string) => void",
+    default: "—",
+    description:
+      "Callback al tocar un item. El host navega / abre sheets (Más, etc.). Sin react-router en la lib.",
+  },
+] as const;
 
 export const globalNavProps = [
   {
@@ -89,7 +149,8 @@ import { Footer } from "@sections/footer";
 export const footerJsonExample = `{
   "layout": {
     "header": { "type": "GlobalNav" },
-    "footer": { "type": "Footer" }
+    "footer": { "type": "Footer" },
+    "shortcutsNav": { "type": "ShortcutsNav" }
   },
   "pages": {
     "home": []

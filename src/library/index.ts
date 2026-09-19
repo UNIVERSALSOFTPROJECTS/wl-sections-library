@@ -20,6 +20,16 @@ export type {
   FooterSocialId,
   FooterSocialItem,
 } from "@sections/footer";
+export {
+  ShortcutsNav,
+  shortcutsNavDefaultActiveId,
+  shortcutsNavItems,
+} from "@sections/shortcutsNav";
+export type {
+  ShortcutsNavItem,
+  ShortcutsNavItemIconId,
+  ShortcutsNavItemKind,
+} from "@sections/shortcutsNav";
 
 export {
   CasinoGames,

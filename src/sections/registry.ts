@@ -11,6 +11,14 @@ import {
   SportsEvents,
 } from "./home";
 import { LatestWinners } from "./latestWinners";
+import { ProfileAccountVerification } from "./profileAccountVerification";
+import { ProfileIdentityVerification } from "./profileIdentityVerification";
+import { ProfileHeader } from "./profileHeader";
+import { ProfileMenu } from "./profileMenu";
+import { ProfilePersonalInfo } from "./profilePersonalInfo";
+import { ProfileReferral } from "./profileReferral";
+import { ProfileRewards } from "./profileRewards";
+import { ProfileVerification } from "./profileVerification";
 import { ShortcutsNav } from "./shortcutsNav";
 import type { SectionDefinition, SectionType } from "./types";
 
@@ -32,6 +40,14 @@ export const sectionRegistry: Record<SectionType, ComponentType> = {
   CasinoGameFilter,
   CasinoProviders,
   CasinoTournamentRail,
+  ProfileHeader,
+  ProfileMenu,
+  ProfilePersonalInfo,
+  ProfileVerification,
+  ProfileRewards,
+  ProfileReferral,
+  ProfileAccountVerification,
+  ProfileIdentityVerification,
 };
 
 export const sectionCatalog: SectionDefinition[] = [
@@ -85,7 +101,7 @@ export const sectionCatalog: SectionDefinition[] = [
   },
   {
     type: "Recommendations",
-    label: "Recomendados para vos",
+    label: "Recomendados para ti",
     scope: "home",
     description: "Carrusel de recomendaciones (live/hot) con imagen y meta.",
   },
@@ -148,5 +164,61 @@ export const sectionCatalog: SectionDefinition[] = [
     scope: "casino",
     description:
       "Lista de torneos con título estilo CasinoGameRail y cards de premio, jugadores y tiempo.",
+  },
+  {
+    type: "ProfileHeader",
+    label: "Encabezado de perfil",
+    scope: "shared",
+    description:
+      "Barra Volver y tarjeta de identidad del perfil: avatar, nivel, XP y progreso.",
+  },
+  {
+    type: "ProfileMenu",
+    label: "Menú de perfil",
+    scope: "shared",
+    description:
+      "Menú horizontal de Mi Perfil. El host navega a la subruta; el contenido va debajo.",
+  },
+  {
+    type: "ProfilePersonalInfo",
+    label: "Información personal",
+    scope: "shared",
+    description:
+      "Bloque de Mi Perfil: título de cuenta y tarjeta de datos personales.",
+  },
+  {
+    type: "ProfileVerification",
+    label: "Verificación de cuenta",
+    scope: "shared",
+    description:
+      "Aviso compacto de Mi Perfil para completar identidad y domicilio.",
+  },
+  {
+    type: "ProfileRewards",
+    label: "Nivel y recompensas",
+    scope: "shared",
+    description:
+      "Tarjeta de Mi Perfil con nivel actual, siguiente nivel y progreso de XP.",
+  },
+  {
+    type: "ProfileReferral",
+    label: "Código de referido",
+    scope: "shared",
+    description:
+      "Tarjeta de Mi Perfil para copiar el código personal e invitar amigos.",
+  },
+  {
+    type: "ProfileAccountVerification",
+    label: "Verificación de cuenta",
+    scope: "shared",
+    description:
+      "Pantalla de Seguridad con el estado de identidad, domicilio, email y teléfono.",
+  },
+  {
+    type: "ProfileIdentityVerification",
+    label: "Verificación de identidad",
+    scope: "shared",
+    description:
+      "Subruta de Seguridad para cargar documento, selfie y comprobante de domicilio.",
   },
 ];

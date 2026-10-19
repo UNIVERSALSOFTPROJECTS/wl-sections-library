@@ -76,7 +76,7 @@ export const OffCanvasSection = () => {
                 aria-label={`OffCanvas ${side}`}
             >
                 <OffCanvasDocPanelElement>
-                    Panel desde {side}. Tocá el backdrop o Escape para cerrar.
+                    Panel desde {side}. Toca el backdrop o Escape para cerrar.
                 </OffCanvasDocPanelElement>
             </OffCanvas>
         </DocSection>

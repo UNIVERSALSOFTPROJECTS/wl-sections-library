@@ -12,6 +12,7 @@ export type {
   BalanceVariant,
   JackpotItem,
   JackpotVariant,
+  ProfileMenuUser,
 } from "@sections/globalNav";
 export { Footer } from "@sections/footer";
 export type {
@@ -92,6 +93,33 @@ export type {
   FeaturedGameCardData,
 } from "@sections/casino";
 
+export { ProfileHeader } from "@sections/profileHeader";
+export type { ProfileHeaderProps } from "@sections/profileHeader";
+export { ProfileMenu, profileMenuDefaultActiveId, profileMenuItems } from "@sections/profileMenu";
+export type { ProfileMenuIconId, ProfileMenuItem, ProfileMenuProps } from "@sections/profileMenu";
+export { ProfilePersonalInfo, profilePersonalInfoFields } from "@sections/profilePersonalInfo";
+export type {
+  ProfilePersonalInfoField,
+  ProfilePersonalInfoIconId,
+  ProfilePersonalInfoProps,
+} from "@sections/profilePersonalInfo";
+export { ProfileVerification } from "@sections/profileVerification";
+export type { ProfileVerificationProps } from "@sections/profileVerification";
+export { ProfileRewards } from "@sections/profileRewards";
+export type { ProfileRewardsProps } from "@sections/profileRewards";
+export { ProfileReferral } from "@sections/profileReferral";
+export type { ProfileReferralProps } from "@sections/profileReferral";
+export {
+  ProfileAccountVerification,
+  profileAccountVerificationItems,
+} from "@sections/profileAccountVerification";
+export type {
+  ProfileAccountVerificationItem,
+  ProfileAccountVerificationProps,
+  ProfileAccountVerificationStatus,
+} from "@sections/profileAccountVerification";
+export { ProfileIdentityVerification } from "@sections/profileIdentityVerification";
+export type { ProfileIdentityVerificationProps } from "@sections/profileIdentityVerification";
 export { Button } from "@shared/ui/buttons/button/Button";
 export { FloatingButton } from "@shared/ui/buttons/floatingButton/FloatingButton";
 export { IconButton } from "@shared/ui/buttons/iconButton/IconButton";

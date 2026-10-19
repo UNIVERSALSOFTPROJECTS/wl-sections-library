@@ -8,7 +8,7 @@ export const heroBannerSlides: HeroBannerSlideData[] = [
     title: "Bono de Bienvenida",
     subtitle: "Hasta $50,000 + 200 Free Spins",
     description:
-      "Duplicá tu primer depósito y obtené spins gratis en los mejores slots",
+      "Duplica tu primer depósito y obtén spins gratis en los mejores slots",
     ctaLabel: "ACTIVAR BONO",
     image: carrerasImage,
   },
@@ -18,7 +18,7 @@ export const heroBannerSlides: HeroBannerSlideData[] = [
     title: "Bono de Bienvenida",
     subtitle: "Hasta $50,000 + 200 Free Spins",
     description:
-      "Duplicá tu primer depósito y obtené spins gratis en los mejores slots",
+      "Duplica tu primer depósito y obtén spins gratis en los mejores slots",
     ctaLabel: "ACTIVAR BONO",
     image: carrerasImage,
   },
@@ -28,7 +28,7 @@ export const heroBannerSlides: HeroBannerSlideData[] = [
     title: "Bono de Bienvenida",
     subtitle: "Hasta $50,000 + 200 Free Spins",
     description:
-      "Duplicá tu primer depósito y obtené spins gratis en los mejores slots",
+      "Duplica tu primer depósito y obtén spins gratis en los mejores slots",
     ctaLabel: "ACTIVAR BONO",
     image: carrerasImage,
   },

@@ -835,7 +835,7 @@ import { Button } from "@shared/ui/buttons/button/Button";
 
 export const iconsRules = [
     {
-        rule: "Importá solo desde @assets/icons",
+        rule: "Importa solo desde @assets/icons",
         detail: "Nunca importes react-icons directo en features/components.",
     },
     {

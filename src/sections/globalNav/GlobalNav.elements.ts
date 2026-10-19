@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const GlobalNavElement = styled.header`
   position: sticky;
   top: 0;
-  z-index: ${({ theme }) => theme.zIndex.header};
+  z-index: ${({ theme }) => theme.zIndex.dropdown};
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(1.5)};

@@ -4,19 +4,20 @@ import {
   MenuIcon,
   SearchIcon,
   SparklesIcon,
-  UserIcon,
 } from "@assets/icons";
 import { IconButton } from "@shared/ui/buttons/iconButton/IconButton";
 import {
   balanceDefaultId,
   balanceOptions as defaultBalanceOptions,
   defaultNotificationBadge,
+  defaultProfileUser,
   defaultSearchPlaceholder,
   jackpotItems as defaultJackpotItems,
 } from "./data";
-import type { BalanceOption, BalanceVariant, JackpotItem } from "./types";
+import type { BalanceOption, BalanceVariant, JackpotItem, ProfileMenuUser } from "./types";
 import { BalanceChip } from "./balanceChip/BalanceChip";
 import { JackpotCard } from "./jackpotCard/JackpotCard";
+import { ProfileMenu } from "./profileMenu/ProfileMenu";
 import {
   GlobalNavElement,
   GlobalNavGroupElement,
@@ -33,6 +34,13 @@ interface GlobalNavProps {
   onDepositPress?: () => void;
   onNotificationsPress?: () => void;
   onProfilePress?: () => void;
+  onVipPress?: () => void;
+  onWithdrawPress?: () => void;
+  onPromotionsPress?: () => void;
+  onBetHistoryPress?: () => void;
+  onSettingsPress?: () => void;
+  onLogoutPress?: () => void;
+  profile?: ProfileMenuUser;
   notificationBadge?: number | string | boolean;
   searchPlaceholder?: string;
   balanceOptions?: BalanceOption[];
@@ -45,6 +53,13 @@ export const GlobalNav = ({
   onDepositPress,
   onNotificationsPress,
   onProfilePress,
+  onVipPress,
+  onWithdrawPress,
+  onPromotionsPress,
+  onBetHistoryPress,
+  onSettingsPress,
+  onLogoutPress,
+  profile = defaultProfileUser,
   notificationBadge = defaultNotificationBadge,
   searchPlaceholder = defaultSearchPlaceholder,
   balanceOptions = defaultBalanceOptions,
@@ -77,12 +92,16 @@ export const GlobalNav = ({
             aria-label="Notificaciones"
             onClick={onNotificationsPress}
           />
-          <IconButton
-            icon={<UserIcon />}
-            variant="ghost"
-            shape="rounded"
-            aria-label="Perfil"
-            onClick={onProfilePress}
+          <ProfileMenu
+            user={profile}
+            onVipPress={onVipPress}
+            onDepositPress={onDepositPress}
+            onWithdrawPress={onWithdrawPress}
+            onProfilePress={onProfilePress}
+            onPromotionsPress={onPromotionsPress}
+            onBetHistoryPress={onBetHistoryPress}
+            onSettingsPress={onSettingsPress}
+            onLogoutPress={onLogoutPress}
           />
         </GlobalNavGroupElement>
       </GlobalNavTopRowElement>

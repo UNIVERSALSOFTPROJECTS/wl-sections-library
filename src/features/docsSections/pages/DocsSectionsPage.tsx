@@ -11,6 +11,14 @@ import { FooterSection } from "../components/footerSection/FooterSection";
 import { GlobalNavSection } from "../components/globalNavSection/GlobalNavSection";
 import { HeroBannerSection } from "../components/heroBannerSection/HeroBannerSection";
 import { HeroPlaceholderSection } from "../components/heroPlaceholderSection/HeroPlaceholderSection";
+import { ProfileHeaderSection } from "../components/profileHeaderSection/ProfileHeaderSection";
+import { ProfileMenuSection } from "../components/profileMenuSection/ProfileMenuSection";
+import { ProfilePersonalInfoSection } from "../components/profilePersonalInfoSection/ProfilePersonalInfoSection";
+import { ProfileAccountVerificationSection } from "../components/profileAccountVerificationSection/ProfileAccountVerificationSection";
+import { ProfileIdentityVerificationSection } from "../components/profileIdentityVerificationSection/ProfileIdentityVerificationSection";
+import { ProfileReferralSection } from "../components/profileReferralSection/ProfileReferralSection";
+import { ProfileRewardsSection } from "../components/profileRewardsSection/ProfileRewardsSection";
+import { ProfileVerificationSection } from "../components/profileVerificationSection/ProfileVerificationSection";
 import { LatestWinnersSection } from "../components/latestWinnersSection/LatestWinnersSection";
 import { RecommendationsSection } from "../components/recommendationsSection/RecommendationsSection";
 import { ShortcutsNavSection } from "../components/shortcutsNavSection/ShortcutsNavSection";
@@ -64,6 +72,14 @@ export const DocsSectionsPage = () => {
           <CasinoGameRailSection />
           <CasinoTournamentRailSection />
           <HeroPlaceholderSection />
+          <ProfileHeaderSection />
+          <ProfileMenuSection />
+          <ProfilePersonalInfoSection />
+          <ProfileVerificationSection />
+          <ProfileRewardsSection />
+          <ProfileReferralSection />
+          <ProfileAccountVerificationSection />
+          <ProfileIdentityVerificationSection />
         </DocsSectionsSectionsElement>
       </DocsSectionsContentElement>
     </DocsSectionsPageElement>

@@ -82,5 +82,32 @@ export type {
   CasinoTournamentTone,
   FeaturedGameCardData,
 } from "./casino";
+export { ProfileHeader } from "./profileHeader";
+export type { ProfileHeaderProps } from "./profileHeader";
+export { ProfileMenu, profileMenuDefaultActiveId, profileMenuItems } from "./profileMenu";
+export type { ProfileMenuIconId, ProfileMenuItem, ProfileMenuProps } from "./profileMenu";
+export { ProfilePersonalInfo, profilePersonalInfoFields } from "./profilePersonalInfo";
+export type {
+  ProfilePersonalInfoField,
+  ProfilePersonalInfoIconId,
+  ProfilePersonalInfoProps,
+} from "./profilePersonalInfo";
+export { ProfileVerification } from "./profileVerification";
+export type { ProfileVerificationProps } from "./profileVerification";
+export { ProfileRewards } from "./profileRewards";
+export type { ProfileRewardsProps } from "./profileRewards";
+export { ProfileReferral } from "./profileReferral";
+export type { ProfileReferralProps } from "./profileReferral";
+export {
+  ProfileAccountVerification,
+  profileAccountVerificationItems,
+} from "./profileAccountVerification";
+export type {
+  ProfileAccountVerificationItem,
+  ProfileAccountVerificationProps,
+  ProfileAccountVerificationStatus,
+} from "./profileAccountVerification";
+export { ProfileIdentityVerification } from "./profileIdentityVerification";
+export type { ProfileIdentityVerificationProps } from "./profileIdentityVerification";
 export { sectionRegistry, sectionCatalog } from "./registry";
 export type { SectionType, SectionDefinition, SectionScope } from "./types";

@@ -15,7 +15,15 @@ export type SectionType =
   | "CasinoGameRail"
   | "CasinoGameFilter"
   | "CasinoProviders"
-  | "CasinoTournamentRail";
+  | "CasinoTournamentRail"
+  | "ProfileHeader"
+  | "ProfileMenu"
+  | "ProfilePersonalInfo"
+  | "ProfileVerification"
+  | "ProfileRewards"
+  | "ProfileReferral"
+  | "ProfileAccountVerification"
+  | "ProfileIdentityVerification";
 
 export type SectionScope = "global" | "home" | "casino" | "shared";
 

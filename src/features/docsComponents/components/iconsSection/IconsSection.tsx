@@ -154,7 +154,7 @@ export const IconsSection = () => {
     return (
         <DocSection
             title="Icons"
-            description="Barrel central en @assets/icons. Incluye alias de react-icons y SVGs custom (Figma). Siempre importá desde ahí, nunca react-icons directo."
+            description="Barrel central en @assets/icons. Incluye alias de react-icons y SVGs custom (Figma). Siempre importa desde ahí, nunca react-icons directo."
         >
             <DocSectionBlock title="Uso">
                 <DocCodeBlock code={iconsUsageCode} />

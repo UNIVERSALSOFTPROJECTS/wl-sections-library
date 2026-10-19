@@ -1,4 +1,4 @@
-import type { BalanceOption, BalanceVariant, JackpotItem } from "./types";
+import type { BalanceOption, BalanceVariant, JackpotItem, ProfileMenuUser } from "./types";
 
 export const balanceOptions: BalanceOption[] = [
   { id: "bonus", label: "Bono", amount: "$ 0,00" },
@@ -23,5 +23,15 @@ export const jackpotItems: JackpotItem[] = [
   },
 ];
 
-export const defaultSearchPlaceholder = "Buscar juegos o preguntale a la IA...";
+export const defaultProfileUser: ProfileMenuUser = {
+  name: "Usuario Premium",
+  email: "user@email.com",
+  vipLevel: "Nivel 3 - Gold",
+  vipProgress: 62,
+  vipPointsRemaining: "350 pts para Nivel 4",
+  balance: "$ 0.00",
+  promotionsCount: 3,
+};
+
+export const defaultSearchPlaceholder = "Buscar juegos o pregúntale a la IA...";
 export const defaultNotificationBadge = 2;

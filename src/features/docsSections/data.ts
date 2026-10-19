@@ -102,7 +102,50 @@ export const globalNavProps = [
     name: "onProfilePress",
     type: "() => void",
     default: "—",
-    description: "Callback del botón perfil.",
+    description: "Callback de Mi Perfil dentro del menú de perfil.",
+  },
+  {
+    name: "onVipPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de la tarjeta Estado VIP.",
+  },
+  {
+    name: "onWithdrawPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Retirar dentro del menú de perfil.",
+  },
+  {
+    name: "onPromotionsPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Promociones dentro del menú de perfil.",
+  },
+  {
+    name: "onBetHistoryPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Historial de Apuestas.",
+  },
+  {
+    name: "onSettingsPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Configuración.",
+  },
+  {
+    name: "onLogoutPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Cerrar Sesión.",
+  },
+  {
+    name: "profile",
+    type: "ProfileMenuUser",
+    default: "Usuario Premium demo",
+    description:
+      "Datos del menú que abre el ícono de perfil: nombre, email, VIP, saldo y badge de promociones.",
   },
   {
     name: "notificationBadge",
@@ -113,7 +156,7 @@ export const globalNavProps = [
   {
     name: "searchPlaceholder",
     type: "string",
-    default: '"Buscar juegos o preguntale a la IA..."',
+    default: '"Buscar juegos o pregúntale a la IA..."',
     description: "Placeholder del buscador (solo UI por ahora).",
   },
   {
@@ -373,7 +416,7 @@ export const recommendationsProps = [
   {
     name: "title",
     type: "string",
-    default: "\"Recomendados para vos\"",
+    default: "\"Recomendados para ti\"",
     description: "Título de la sección.",
   },
   {
@@ -943,6 +986,558 @@ export const casinoTournamentRailProps = [
     default: "—",
     description: "Callback de Participar Ahora. El host resuelve la acción.",
   }
+] as const;
+
+export const profileHeaderUsageCode = `import { ProfileHeader } from "@wl/sections-library";
+// o en el playground:
+import { ProfileHeader } from "@sections/profileHeader";
+
+<ProfileHeader onBack={() => navigate(-1)} />
+<ProfileHeader
+  name="Carlos Martínez"
+  handle="@carlosmartinez"
+  progress={72.5}
+  onEdit={() => openEditor()}
+/>`;
+
+export const profileHeaderJsonExample = `{
+  "pages": {
+    "profile": [
+      { "type": "ProfileHeader" }
+    ]
+  }
+}`;
+
+export const profileHeaderProps = [
+  {
+    name: "name",
+    type: "string",
+    default: '"Carlos Martínez"',
+    description: "Nombre visible en la tarjeta.",
+  },
+  {
+    name: "handle",
+    type: "string",
+    default: '"@carlosmartinez"',
+    description: "Usuario, con @.",
+  },
+  {
+    name: "vipLabel",
+    type: "string",
+    default: '"VIP"',
+    description: "Texto del badge VIP.",
+  },
+  {
+    name: "levelLabel",
+    type: "string",
+    default: '"Oro II · Nivel 8"',
+    description: "Texto del badge de nivel.",
+  },
+  {
+    name: "currentXp",
+    type: "string",
+    default: '"7.250 XP"',
+    description: "XP actual, ya formateado.",
+  },
+  {
+    name: "targetXp",
+    type: "string",
+    default: '"10.000 XP"',
+    description: "XP del próximo nivel, ya formateado.",
+  },
+  {
+    name: "progress",
+    type: "number",
+    default: "72.5",
+    description: "Avance de 0 a 100. Se muestra como porcentaje es-AR.",
+  },
+  {
+    name: "nextLevel",
+    type: "string",
+    default: '"Oro III"',
+    description: "Nombre del próximo nivel.",
+  },
+  {
+    name: "spaceLabel",
+    type: "string",
+    default: '"Tu espacio personal"',
+    description: "Texto verde de la barra superior.",
+  },
+  {
+    name: "onBack",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Volver. El host navega. Sin react-router en la lib.",
+  },
+  {
+    name: "onEdit",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Editar.",
+  },
+] as const;
+
+export const profileMenuUsageCode = `import { ProfileMenu } from "@wl/sections-library";
+// o en el playground:
+import { ProfileMenu } from "@sections/profileMenu";
+
+<ProfileMenu activeId="profile" onItemPress={(id) => navigate(paths[id])} />`;
+
+export const profileMenuJsonExample = `{
+  "pages": {
+    "profile": [
+      { "type": "ProfileHeader" },
+      { "type": "ProfileMenu" }
+    ]
+  }
+}`;
+
+export const profileMenuProps = [
+  {
+    name: "items",
+    type: "ProfileMenuItem[]",
+    default: "profileMenuItems",
+    description: "Ítems del menú: id, label e icon.",
+  },
+  {
+    name: "activeId",
+    type: "string",
+    default: "—",
+    description: "Ítem activo. Lo controla el host según la ruta.",
+  },
+  {
+    name: "defaultActiveId",
+    type: "string",
+    default: '"profile"',
+    description: "Activo inicial si no hay activeId.",
+  },
+  {
+    name: "onItemPress",
+    type: "(id: string) => void",
+    default: "—",
+    description: "Callback del ítem. El host navega a la subruta. Sin react-router en la lib.",
+  },
+] as const;
+
+export const profilePersonalInfoUsageCode = `import { ProfilePersonalInfo } from "@wl/sections-library";
+// o en el playground:
+import { ProfilePersonalInfo } from "@sections/profilePersonalInfo";
+
+<ProfilePersonalInfo onEdit={() => openEditor()} />`;
+
+export const profilePersonalInfoJsonExample = `{
+  "pages": {
+    "profileOverview": [
+      { "type": "ProfilePersonalInfo" }
+    ]
+  }
+}`;
+
+export const profilePersonalInfoProps = [
+  {
+    name: "title",
+    type: "string",
+    default: '"Todo sobre tu cuenta"',
+    description: "Título sobre la tarjeta.",
+  },
+  {
+    name: "subtitle",
+    type: "string",
+    default: '"Tus datos, tu estado y tus beneficios. En un solo lugar."',
+    description: "Bajada del título.",
+  },
+  {
+    name: "sectionTitle",
+    type: "string",
+    default: '"Información personal"',
+    description: "Título dentro de la tarjeta.",
+  },
+  {
+    name: "sectionDescription",
+    type: "string",
+    default: '"Mantén tus datos actualizados."',
+    description: "Texto bajo el título de la tarjeta.",
+  },
+  {
+    name: "editLabel",
+    type: "string",
+    default: '"Editar"',
+    description: "Texto del botón de edición.",
+  },
+  {
+    name: "fields",
+    type: "ProfilePersonalInfoField[]",
+    default: "profilePersonalInfoFields",
+    description: "Filas de datos: id, icon, label y value.",
+  },
+  {
+    name: "privacyLabel",
+    type: "string",
+    default: '"Solo tú puedes ver esta información."',
+    description: "Aviso al pie de la tarjeta.",
+  },
+  {
+    name: "onEdit",
+    type: "() => void",
+    default: "—",
+    description: "Se llama al abrir el modal de edición. El modal vive en la sección.",
+  },
+] as const;
+
+export const profileVerificationUsageCode = `import { ProfileVerification } from "@wl/sections-library";
+// o en el playground:
+import { ProfileVerification } from "@sections/profileVerification";
+
+<ProfileVerification onAction={() => openVerification()} />`;
+
+export const profileVerificationJsonExample = `{
+  "pages": {
+    "profileOverview": [
+      { "type": "ProfilePersonalInfo" },
+      { "type": "ProfileVerification" }
+    ]
+  }
+}`;
+
+export const profileVerificationProps = [
+  {
+    name: "title",
+    type: "string",
+    default: '"Completa la verificación"',
+    description: "Título del aviso.",
+  },
+  {
+    name: "description",
+    type: "string",
+    default: '"Identidad y domicilio pendientes"',
+    description: "Detalle bajo el título.",
+  },
+  {
+    name: "actionLabel",
+    type: "string",
+    default: '"Completar"',
+    description: "Texto del botón.",
+  },
+  {
+    name: "onAction",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Completar. El host navega. Sin react-router en la lib.",
+  },
+] as const;
+
+export const profileRewardsUsageCode = `import { ProfileRewards } from "@wl/sections-library";
+// o en el playground:
+import { ProfileRewards } from "@sections/profileRewards";
+
+<ProfileRewards
+  progress={72.5}
+  onBenefits={() => openBenefits()}
+  onLevelPress={() => openLevel()}
+/>`;
+
+export const profileRewardsJsonExample = `{
+  "pages": {
+    "profileOverview": [
+      { "type": "ProfilePersonalInfo" },
+      { "type": "ProfileVerification" },
+      { "type": "ProfileRewards" }
+    ]
+  }
+}`;
+
+export const profileRewardsProps = [
+  {
+    name: "title",
+    type: "string",
+    default: '"Nivel y recompensas"',
+    description: "Título de la tarjeta.",
+  },
+  {
+    name: "benefitsLabel",
+    type: "string",
+    default: '"Beneficios"',
+    description: "Texto del botón superior.",
+  },
+  {
+    name: "currentLabel",
+    type: "string",
+    default: '"Nivel actual"',
+    description: "Etiqueta sobre el nivel actual.",
+  },
+  {
+    name: "levelName",
+    type: "string",
+    default: '"Oro II"',
+    description: "Nombre del nivel actual.",
+  },
+  {
+    name: "levelNumber",
+    type: "string",
+    default: '"Nv. 8"',
+    description: "Número de nivel.",
+  },
+  {
+    name: "nextLabel",
+    type: "string",
+    default: '"Siguiente nivel"',
+    description: "Etiqueta del próximo nivel.",
+  },
+  {
+    name: "nextLevel",
+    type: "string",
+    default: '"Oro III"',
+    description: "Nombre del próximo nivel.",
+  },
+  {
+    name: "xpLabel",
+    type: "string",
+    default: '"7.250 / 10.000 XP"',
+    description: "XP actual y objetivo, ya formateado.",
+  },
+  {
+    name: "progress",
+    type: "number",
+    default: "72.5",
+    description: "Avance de 0 a 100. Se muestra como porcentaje es-AR.",
+  },
+  {
+    name: "remainingPrefix",
+    type: "string",
+    default: '"Te faltan"',
+    description: "Texto antes del XP restante.",
+  },
+  {
+    name: "remainingXp",
+    type: "string",
+    default: '"2.750 XP"',
+    description: "XP restante, en negrita.",
+  },
+  {
+    name: "remainingSuffix",
+    type: "string",
+    default: '"para el siguiente nivel."',
+    description: "Texto después del XP restante.",
+  },
+  {
+    name: "onBenefits",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Beneficios. El host navega. Sin react-router en la lib.",
+  },
+  {
+    name: "onLevelPress",
+    type: "() => void",
+    default: "—",
+    description: "Callback del nivel actual. El host navega.",
+  },
+] as const;
+
+export const profileReferralUsageCode = `import { ProfileReferral } from "@wl/sections-library";
+// o en el playground:
+import { ProfileReferral } from "@sections/profileReferral";
+
+<ProfileReferral
+  code="CARLOS8"
+  onInvite={() => openInvite()}
+  onHelp={() => openReferralHelp()}
+/>`;
+
+export const profileReferralJsonExample = `{
+  "pages": {
+    "profileOverview": [
+      { "type": "ProfileRewards" },
+      { "type": "ProfileReferral" }
+    ]
+  }
+}`;
+
+export const profileReferralProps = [
+  {
+    name: "title",
+    type: "string",
+    default: '"Lo bueno se comparte"',
+    description: "Título de la tarjeta.",
+  },
+  {
+    name: "description",
+    type: "string",
+    default: '"Invita a tus amigos con tu código personal."',
+    description: "Bajada bajo el título.",
+  },
+  {
+    name: "code",
+    type: "string",
+    default: '"CARLOS8"',
+    description: "Código personal. Se muestra en mayúsculas.",
+  },
+  {
+    name: "inviteLabel",
+    type: "string",
+    default: '"Invitar"',
+    description: "Texto del botón de invitar.",
+  },
+  {
+    name: "helpLabel",
+    type: "string",
+    default: '"Cómo funcionan los referidos"',
+    description: "Texto del enlace inferior.",
+  },
+  {
+    name: "onCopy",
+    type: "(code: string) => void",
+    default: "—",
+    description: "Se llama al copiar. El componente también escribe el código en el portapapeles.",
+  },
+  {
+    name: "onInvite",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Invitar. El host resuelve la acción.",
+  },
+  {
+    name: "onHelp",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Cómo funcionan los referidos. El host navega.",
+  },
+] as const;
+
+export const profileAccountVerificationUsageCode = `import { ProfileAccountVerification } from "@wl/sections-library";
+// o en el playground:
+import { ProfileAccountVerification } from "@sections/profileAccountVerification";
+
+<ProfileAccountVerification
+  onBack={() => goToProfile()}
+  onItemPress={(id) => openVerification(id)}
+  onExamples={() => openExamples()}
+/>`;
+
+export const profileAccountVerificationJsonExample = `{
+  "pages": {
+    "profileSecurity": [
+      { "type": "ProfileAccountVerification" }
+    ]
+  }
+}`;
+
+export const profileAccountVerificationProps = [
+  {
+    name: "backLabel",
+    type: "string",
+    default: '"Volver a mi perfil"',
+    description: "Texto del enlace superior.",
+  },
+  {
+    name: "groupLabel",
+    type: "string",
+    default: '"Seguridad"',
+    description: "Primer tramo del breadcrumb.",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: '"Verificación de cuenta"',
+    description: "Título y segundo tramo del breadcrumb.",
+  },
+  {
+    name: "items",
+    type: "ProfileAccountVerificationItem[]",
+    default: "profileAccountVerificationItems",
+    description: "Filas: id, label y status pending | verified.",
+  },
+  {
+    name: "pendingLabel",
+    type: "string",
+    default: '"Pendiente"',
+    description: "Texto del estado pendiente.",
+  },
+  {
+    name: "verifiedLabel",
+    type: "string",
+    default: '"Verificado"',
+    description: "Texto del estado verificado.",
+  },
+  {
+    name: "note",
+    type: "string",
+    default: '"La documentación requiere revisión..."',
+    description: "Aviso bajo la lista.",
+  },
+  {
+    name: "examplesLabel",
+    type: "string",
+    default: '"Ver estados de ejemplo"',
+    description: "Texto del enlace inferior.",
+  },
+  {
+    name: "onBack",
+    type: "() => void",
+    default: "—",
+    description: "Vuelve a Mi Perfil. El host navega. Sin react-router en la lib.",
+  },
+  {
+    name: "onItemPress",
+    type: "(id: string) => void",
+    default: "—",
+    description: "Callback de una fila pendiente. El host abre el flujo.",
+  },
+  {
+    name: "onExamples",
+    type: "() => void",
+    default: "—",
+    description: "Callback de Ver estados de ejemplo.",
+  },
+] as const;
+
+export const profileIdentityVerificationUsageCode = `import { ProfileIdentityVerification } from "@wl/sections-library";
+// o en el playground:
+import { ProfileIdentityVerification } from "@sections/profileIdentityVerification";
+
+<ProfileIdentityVerification
+  onBack={() => goToSecurity()}
+  onPrepare={() => prepareVerification()}
+/>`;
+
+export const profileIdentityVerificationJsonExample = `{
+  "pages": {
+    "profileIdentity": [
+      { "type": "ProfileIdentityVerification" }
+    ]
+  }
+}`;
+
+export const profileIdentityVerificationProps = [
+  {
+    name: "backLabel",
+    type: "string",
+    default: '"Volver a verificación de cuenta"',
+    description: "Texto del enlace superior.",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: '"Verificación de identidad"',
+    description: "Título de la tarjeta inicial.",
+  },
+  {
+    name: "description",
+    type: "string",
+    default: '"Tu documento, una selfie y un comprobante de domicilio. Te guiamos paso a paso."',
+    description: "Bajada de la tarjeta inicial.",
+  },
+  {
+    name: "onBack",
+    type: "() => void",
+    default: "—",
+    description: "Vuelve a Seguridad. El host navega. Sin react-router en la lib.",
+  },
+  {
+    name: "onPrepare",
+    type: "() => void",
+    default: "—",
+    description: "Se habilita con los 4 archivos y la confirmación. El host continúa.",
+  },
 ] as const;
 
 

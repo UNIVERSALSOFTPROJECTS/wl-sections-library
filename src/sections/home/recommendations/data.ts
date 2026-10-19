@@ -36,4 +36,4 @@ export const recommendations: RecommendationCardData[] = [
   },
 ];
 
-export const defaultRecommendationsTitle = "Recomendados para vos";
+export const defaultRecommendationsTitle = "Recomendados para ti";
